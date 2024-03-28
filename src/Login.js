@@ -8,11 +8,11 @@ function Login() {
   const navigate = useNavigate();
 
   const nevigateToRegistration = () => {
-    navigate("/Registration");
+    navigate("/registration");
   };
 
   const nevigateToDashboard = () => {
-    navigate("/Dashboard");
+    navigate("/home");
   };
 
   return (
@@ -65,7 +65,7 @@ function Login() {
 
             <span className="psw-one">
               Don't have an account yet ?{" "}
-              <a onClick={nevigateToRegistration} href="/Registration">
+              <a onClick={nevigateToRegistration} href="/registration">
                 Register now
               </a>
             </span>
