@@ -7,14 +7,16 @@ function AboutUs() {
       <br></br>
       <br></br>
       <br></br>
-
       <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+            <h1
+            // className="divider"
+            >
+              About Us
+            </h1>
             <div className="col-sm-12">
               <div className="well">
-                <h1 className="divider">About Us</h1>
-
                 <p>
                   The Ministry of Road Transport & Highways (MoRTH) has been
                   facilitating computerization of over 1300+ Road Transport
@@ -66,11 +68,6 @@ function AboutUs() {
                   <li>
                     Quick implementation of government policies from time to
                     time
-                  </li>
-                  <li>Improved image of Government & Department</li>
-                  <li>
-                    Instant access of Vehicle/DL information to other government
-                    departments
                   </li>
                 </ul>
 

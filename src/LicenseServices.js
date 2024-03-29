@@ -13,29 +13,31 @@ function LicenseServices() {
   //   };
   return (
     <div>
-      <div class="container-fluid">
-        <div class="col-sm-12">
-          <div class="row" style={{ border: "3px solid #f1f1f1" }}>
+      <div className="container-fluid">
+        <div className="col-sm-12">
+          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>License Related Services</h3>
 
-            <div class="col-sm-3">
-              <div class="well">
-                <img src={DrivingLicense} alt="Avatar" className="avatar" />
-
-                <h4>Drivers/ Learners License</h4>
-                <p>Apply for License</p>
-              </div>
+            <div className="col-sm-3">
+              <a href="/license">
+                <div className="well">
+                  <img src={DrivingLicense} alt="Avatar" className="avatar" />
+                  <h4>Drivers/ Learners License</h4>
+                  <p>Apply for License</p>
+                </div>
+              </a>
             </div>
-            <div class="col-sm-3">
-              <div class="well">
+
+            <div className="col-sm-3">
+              <div className="well">
                 <img src={DrivingSchool} alt="Avatar" className="avatar" />
 
                 <h4>Driving School</h4>
                 <p> One place for application of Driving School License</p>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="well">
+            <div className="col-sm-3">
+              <div className="well">
                 <img
                   src={OnlineTestAppointemet}
                   alt="Avatar"
@@ -46,8 +48,8 @@ function LicenseServices() {
                 <p>Book/ Modify Online test appointments</p>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="well">
+            <div className="col-sm-3">
+              <div className="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />
 
                 <h4>Other Services</h4>

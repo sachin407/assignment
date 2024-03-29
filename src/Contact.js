@@ -26,7 +26,9 @@ function ContactUs() {
 
             <div className="col-sm-3">
               <div className="well">
-                <h4 className="divider">Email-id</h4>
+                <h4 className="divider">
+                  <i className="bx bxl-gmail"></i> Email-id
+                </h4>
                 <p>helpdesk-vahan[at]gov[dot]in</p>
                 <p>helpdesk-sarathi[at]gov[dot]in</p>
                 <p>helpdesk-mparivahan[at]gov[dot]in </p>
@@ -36,14 +38,19 @@ function ContactUs() {
 
             <div className="col-sm-3">
               <div className="well">
-                <h4 className="divider">Contact Number</h4>
+                <h4 className="divider">
+                  {" "}
+                  <i class="bx bxs-contact"></i> Contact Number
+                </h4>
                 <p style={{ padding: "43px" }}>+91-120-4925505</p>
               </div>
             </div>
 
             <div className="col-sm-3">
               <div className="well">
-                <h4 className="divider">Timings</h4>
+                <h4 className="divider">
+                  <i class="bx bxs-time"></i> Timings
+                </h4>
                 <p style={{ padding: "43px" }}>06:00 AM - 12:00 Midnight</p>
               </div>
             </div>

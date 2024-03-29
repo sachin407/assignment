@@ -13,6 +13,7 @@ import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
 import About from "./About";
+import License from "./Lincense";
 
 function NavbarWithLocation() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/registration" element={<Registration />} />
+          <Route exact path="/license" element={<License />} />
         </Routes>
       </div>
     </Router>

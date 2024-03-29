@@ -18,7 +18,7 @@ function VehicleServices() {
           <div class="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>Vehicles Related Services</h3>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <div class="well">
                 <img src={DrivingLicense} alt="Avatar" className="avatar" />
 
@@ -26,15 +26,8 @@ function VehicleServices() {
                 <p>One click for all the vehicle related citizen services</p>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="well">
-                <img src={DrivingSchool} alt="Avatar" className="avatar" />
 
-                <h4>Fancy Number Allocation</h4>
-                <p>Your favorite number for your favorite vehiclee</p>
-              </div>
-            </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <div class="well">
                 <img
                   src={OnlineTestAppointemet}
@@ -46,7 +39,7 @@ function VehicleServices() {
                 <p>Seamless online way for vehicle permits</p>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <div class="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />
 

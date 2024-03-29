@@ -210,3 +210,28 @@ li a:hover:not(.active) {
 }
 
 /* ********************************************************* */
+
+.bx .bxl-gmail {
+  font-size: 30px;
+}
+
+/* ***************************LICENSE SCREEN ****************************** */
+.license-img {
+  cursor: pointer;
+  transition: transform 1s ease-in-out; /* Adjust transition duration here */
+}
+
+.license-img:hover {
+  transform: rotate(360deg);
+}
+
+/* Additional styles for the well container */
+.license-well {
+  text-align: center; /* Center the content */
+  img.avatar {
+    width: 15% !important;
+    border-radius: 50%;
+  }
+}
+
+/* ***************************LICENSE SCREEN ****************************** */

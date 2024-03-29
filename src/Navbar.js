@@ -1,13 +1,22 @@
 import "./Common.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [activeTab, setActiveTab] = useState("home");
 
+  useEffect(() => {
+    const storedTab = localStorage.getItem("activeTab");
+    if (storedTab) {
+      setActiveTab(storedTab);
+    }
+  }, []);
+
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+    localStorage.setItem("activeTab", tabName);
   };
+
   return (
     <div>
       <ul style={{ zIndex: "1" }}>
@@ -51,4 +60,5 @@ function Navbar() {
     </div>
   );
 }
+
 export default Navbar;
