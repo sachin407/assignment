@@ -173,7 +173,7 @@ function License() {
                   onChange={(e) => {
                     setState(e.target.value);
                   }}
-                  className={`input
+                  className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
                 >
                   <option value="">Please Select State</option>

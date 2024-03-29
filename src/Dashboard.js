@@ -8,10 +8,10 @@ import VehicleServices from "./VehicleServices";
 function Dashboard() {
   return (
     <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
+      <br />
       <div>
         <LicenseServices />
       </div>

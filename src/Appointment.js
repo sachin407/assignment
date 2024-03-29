@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "reactstrap";
+import { Input, Form, Row, Col } from "reactstrap";
 // import "./styles.css";
 
 function Appointment() {
@@ -9,36 +9,64 @@ function Appointment() {
       <br />
       <br />
       <br />
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>Appointment Form</h3>
-            <div className="formContainer">
-              <form action="/action_page.php">
-                <label htmlFor="fname">First Name</label>
+            <div className="col-sm-12">
+              <div className="well">
+                <Form>
+                  <label htmlFor="fname">First Name</label>
+                  <Input
+                    type="text"
+                    id="fname"
+                    name="firstname"
+                    placeholder="Your name.."
+                    className="input"
+                  />
+
+                  <label htmlFor="lname">Last Name</label>
+                  <Input
+                    type="text"
+                    id="lname"
+                    name="lastname"
+                    placeholder="Your last name.."
+                    className="input"
+                  />
+                </Form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="container-fluid">
+        <div className="col-sm-12">
+          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+            <h3>Appointment Online Form</h3>
+
+            <div className="col-sm-12">
+              <div className="well">
+                <h4 className="divider">
+                  Please select the State from where the service is to be taken
+                </h4>
                 <Input
                   type="text"
-                  id="fname"
-                  name="firstname"
-                  placeholder="Your name.."
-                  className="input"
+                  name="state"
+                  id="state"
+                  placeholder="select State"
+                  className={`input`}
                 />
-                <label htmlFor="lname">Last Name</label>
-                <Input
-                  type="text"
-                  id="lname"
-                  name="lastname"
-                  placeholder="Your last name.."
-                  className="input"
-                />
-                <label htmlFor="country">Country</label>
-                <select id="country" name="country" className="input">
-                  <option value="australia">Australia</option>
-                  <option value="canada">Canada</option>
-                  <option value="usa">USA</option>
-                </select>
-                <Input type="submit" value="Submit" className="submitButton" />
-              </form>
+                {/* <option value="">Please Select State</option>
+                  {stateDropdown.map((item) => (
+                    <option value={item.value}>{item.label}</option>
+                  ))} */}
+
+                {/* {submitFlag && !state && (
+                  <div className="invalid-feedback1">
+                    {"Category is required"}
+                  </div>
+                )} */}
+              </div>
             </div>
           </div>
         </div>

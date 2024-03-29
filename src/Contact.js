@@ -3,10 +3,10 @@ import React from "react";
 function ContactUs() {
   return (
     <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>

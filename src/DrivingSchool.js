@@ -148,10 +148,10 @@ function DrivingSchool() {
   ];
   return (
     <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
+      <br />
 
       <div className="container-fluid">
         <div className="col-sm-12">
@@ -173,7 +173,7 @@ function DrivingSchool() {
                   onChange={(e) => {
                     setState(e.target.value);
                   }}
-                  className={`input
+                  className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
                 >
                   <option value="">Please Select State</option>
