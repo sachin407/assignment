@@ -29,7 +29,7 @@ function LicenseServices() {
             </div>
 
             <div className="col-sm-3">
-              <a href="/drivng">
+              <a href="/driving">
                 <div className="well">
                   <img src={DrivingSchool} alt="Avatar" className="avatar" />
                   <h4>Driving School</h4>
