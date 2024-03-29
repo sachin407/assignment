@@ -65,10 +65,6 @@ function AboutUs() {
                   <li>
                     Better services to Transport Department as well as citizen
                   </li>
-                  <li>
-                    Quick implementation of government policies from time to
-                    time
-                  </li>
                 </ul>
 
                 <p>

@@ -29,7 +29,7 @@ function LicenseServices() {
             </div>
 
             <div className="col-sm-3">
-              <a href="/driving">
+              <a href="/driving/school">
                 <div className="well">
                   <img src={DrivingSchool} alt="Avatar" className="avatar" />
                   <h4>Driving School</h4>
@@ -39,17 +39,19 @@ function LicenseServices() {
             </div>
 
             <div className="col-sm-3">
-              <div className="well">
-                <img
-                  src={OnlineTestAppointemet}
-                  alt="Avatar"
-                  className="avatar"
-                />
-
-                <h4>Online Test Appointment</h4>
-                <p>Book/ Modify Online test appointments</p>
-              </div>
+              <a href="/appointment">
+                <div className="well">
+                  <img
+                    src={OnlineTestAppointemet}
+                    alt="Avatar"
+                    className="avatar"
+                  />
+                  <h4>Online Test Appointment</h4>
+                  <p>Book/ Modify Online test appointments</p>
+                </div>
+              </a>
             </div>
+
             <div className="col-sm-3">
               <div className="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />

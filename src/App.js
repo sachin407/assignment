@@ -15,6 +15,7 @@ import Contact from "./Contact";
 import About from "./About";
 import License from "./Lincense";
 import DrivingSchool from "./DrivingSchool";
+import Appointment from "./Appointment";
 
 function NavbarWithLocation() {
   const location = useLocation();
@@ -35,7 +36,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/license" element={<License />} />
-          <Route exact path="/driving" element={<DrivingSchool />} />
+          <Route exact path="/driving/school" element={<DrivingSchool />} />
+          <Route exact path="/appointment" element={<Appointment />} />
         </Routes>
       </div>
     </Router>

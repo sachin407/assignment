@@ -235,3 +235,33 @@ li a:hover:not(.active) {
 }
 
 /* ***************************LICENSE SCREEN ****************************** */
+
+/* ***************************APPOINTMENT SCREEN  ****************************** */
+/* .container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} */
+
+.formContainer {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submitButton {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+/* ***************************APPOINTMENT SCREEN  ****************************** */
