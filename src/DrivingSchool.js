@@ -173,7 +173,7 @@ function DrivingSchool() {
                   onChange={(e) => {
                     setState(e.target.value);
                   }}
-                  className={`required-input
+                  className={`input
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
                 >
                   <option value="">Please Select State</option>
