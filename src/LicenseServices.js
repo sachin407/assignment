@@ -29,13 +29,15 @@ function LicenseServices() {
             </div>
 
             <div className="col-sm-3">
-              <div className="well">
-                <img src={DrivingSchool} alt="Avatar" className="avatar" />
-
-                <h4>Driving School</h4>
-                <p> One place for application of Driving School License</p>
-              </div>
+              <a href="/drivng">
+                <div className="well">
+                  <img src={DrivingSchool} alt="Avatar" className="avatar" />
+                  <h4>Driving School</h4>
+                  <p> One place for application of Driving School License</p>
+                </div>
+              </a>
             </div>
+
             <div className="col-sm-3">
               <div className="well">
                 <img

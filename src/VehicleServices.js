@@ -1,7 +1,6 @@
 // import { useNavigate } from "react-router-dom";
 import "./Common.css";
 import DrivingLicense from "./imgFiles/Vehicles Services/v-new-vehicle-registration.png";
-import DrivingSchool from "./imgFiles/Vehicles Services/v-fancy-number-allocation.png";
 import OnlineTestAppointemet from "./imgFiles/Vehicles Services/v-permit-services.png";
 import OtherServices from "./imgFiles/Vehicles Services/v-vehicle-registration.png";
 

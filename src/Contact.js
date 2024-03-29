@@ -14,7 +14,9 @@ function ContactUs() {
 
             <div className="col-sm-3">
               <div className="well">
-                <h4 className="divider">Problem Area</h4>
+                <h4 className="divider">
+                  <i class="bx bxs-user-voice"></i> Problem Area
+                </h4>
                 <p>
                   Vehicle registration, fitness, Tax, Permit, Fancy, Dealer etc
                 </p>

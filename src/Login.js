@@ -1,5 +1,4 @@
 import "./Common.css";
-import Registration from "./Registration";
 import { useNavigate } from "react-router-dom";
 import LoginAvatar from "./imgFiles/img_avatar2.png";
 // import { useHistory } from "react-router-dom";
