@@ -18,7 +18,7 @@ function LicenseServices() {
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>License Related Services</h3>
 
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               <a href="/license">
                 <div className="well">
                   <img src={DrivingLicense} alt="Avatar" className="avatar" />
@@ -28,7 +28,7 @@ function LicenseServices() {
               </a>
             </div>
 
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               <a href="/driving/school">
                 <div className="well">
                   <img src={DrivingSchool} alt="Avatar" className="avatar" />
@@ -38,21 +38,7 @@ function LicenseServices() {
               </a>
             </div>
 
-            <div className="col-sm-3">
-              <a href="/appointment">
-                <div className="well">
-                  <img
-                    src={OnlineTestAppointemet}
-                    alt="Avatar"
-                    className="avatar"
-                  />
-                  <h4>Online Test Appointment</h4>
-                  <p>Book/ Modify Online test appointments</p>
-                </div>
-              </a>
-            </div>
-
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               <div className="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />
 

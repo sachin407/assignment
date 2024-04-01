@@ -9,36 +9,6 @@ function Appointment() {
       <br />
       <br />
       <br />
-      {/* <div className="container-fluid">
-        <div className="col-sm-12">
-          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-            <h3>Appointment Form</h3>
-            <div className="col-sm-12">
-              <div className="well">
-                <Form>
-                  <label htmlFor="fname">First Name</label>
-                  <Input
-                    type="text"
-                    id="fname"
-                    name="firstname"
-                    placeholder="Your name.."
-                    className="input"
-                  />
-
-                  <label htmlFor="lname">Last Name</label>
-                  <Input
-                    type="text"
-                    id="lname"
-                    name="lastname"
-                    placeholder="Your last name.."
-                    className="input"
-                  />
-                </Form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
@@ -46,26 +16,27 @@ function Appointment() {
 
             <div className="col-sm-12">
               <div className="well">
-                <h4 className="divider">
-                  Please select the State from where the service is to be taken
-                </h4>
-                <Input
-                  type="text"
-                  name="state"
-                  id="state"
-                  placeholder="select State"
-                  className={`input`}
-                />
-                {/* <option value="">Please Select State</option>
-                  {stateDropdown.map((item) => (
-                    <option value={item.value}>{item.label}</option>
-                  ))} */}
+                <div className="appointment">
+                  <label htmlFor="lname">First Name</label> {""}
+                  <Input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    placeholder="Enter Firstname"
+                    className={`input`}
+                  />
+                </div>
 
-                {/* {submitFlag && !state && (
-                  <div className="invalid-feedback1">
-                    {"Category is required"}
-                  </div>
-                )} */}
+                <div className="appointment">
+                  <label htmlFor="lname">Last Name</label> {""}
+                  <Input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="Enter Lastname"
+                    className={`input`}
+                  />
+                </div>
               </div>
             </div>
           </div>
