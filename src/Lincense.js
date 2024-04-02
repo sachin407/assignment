@@ -182,9 +182,7 @@ function License() {
                   ))}
                 </Input>
                 {submitFlag && !state && (
-                  <div className="invalid-feedback1">
-                    {"Category is required"}
-                  </div>
+                  <div className="invalid-feedback1">{"State is required"}</div>
                 )}
                 {/* </div> */}
               </div>
@@ -194,20 +192,24 @@ function License() {
       </div>
       <br />
       <div>
-        <div class="container-fluid">
-          <div class="col-sm-12">
-            <div class="row" style={{ border: "3px solid #f1f1f1" }}>
+        <div className="container-fluid">
+          <div className="col-sm-12">
+            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
               <h3 style={{ color: "green" }}>MOTOR VEHICLES DEPARTMENT</h3>
 
               <div className="col-sm-6">
-                <div className="well license-well">
-                  <img
-                    src={LicenseLogo}
-                    alt="Avatar"
-                    className="avatar license-img"
-                  />
-                  <h4>Apply for Learner Licence</h4>
-                </div>
+                <a href="create/license">
+                  <div
+                    className={`well license-well ${!state && "disabled-card"}`}
+                  >
+                    <img
+                      src={LicenseLogo}
+                      alt="Avatar"
+                      className="avatar license-img"
+                    />
+                    <h4>Apply for Learner Licence</h4>
+                  </div>
+                </a>
               </div>
 
               <div class="col-sm-6">
@@ -219,29 +221,6 @@ function License() {
                   />
 
                   <h4>Apply For Driving License</h4>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="well license-well">
-                  <img
-                    src={Renewallogo}
-                    alt="Avatar"
-                    className="avatar license-img"
-                  />
-
-                  <h4>Apply for Change Address</h4>
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="well license-well">
-                  <img
-                    src={locationlogo}
-                    alt="Avatar"
-                    className="avatar license-img"
-                  />
-
-                  <h4>Apply for Driving License Renewal</h4>
                 </div>
               </div>
             </div>

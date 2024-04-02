@@ -236,7 +236,7 @@ li a:hover:not(.active) {
 
 /* ***************************LICENSE SCREEN ****************************** */
 
-/* ***************************APPOINTMENT SCREEN  ****************************** */
+/* ***************************LEARNER LICENSE SCREEN  ****************************** */
 /* .container {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -248,7 +248,7 @@ li a:hover:not(.active) {
   margin: 0 auto;
 }
 
-.appointment {
+.commoninput {
   input {
     width: 50% !important;
     padding: 12px 20px;
@@ -274,6 +274,58 @@ li a:hover:not(.active) {
   background-color: #4caf50;
   color: white;
   cursor: pointer;
+}
+
+.gender {
+  input {
+    margin: 10px;
+  }
+}
+
+.well-gender {
+  min-height: 20px;
+  padding: 27px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.well-bloodgroup {
+  min-height: 20px;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.phonecodeinputs {
+  /* width: 10%; */
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.well-button {
+  min-height: 20px;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 /* ***************************APPOINTMENT SCREEN  ****************************** */
