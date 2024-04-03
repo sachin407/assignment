@@ -1,13 +1,24 @@
 import React, { useState } from "react";
-import { Input, Form, Row, Col, Button } from "reactstrap";
+import { Input, Form, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  state: yup.string("Enter your state").required("state is required"),
+});
 
 function LearnerLicense() {
   const [state, setState] = useState("");
+  const [rto, setRto] = useState("");
   const [submitFlag, setSubmitFlag] = useState(false);
   const [gender, setGender] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
+
+  const [listData, setListData] = useState({
+    state: "",
+  });
 
   const stateDropdown = [
     {
@@ -147,6 +158,21 @@ function LearnerLicense() {
       value: "Puducherry",
     },
   ];
+  const RTOOffices = [
+    {
+      value: "Andhra Pradesh",
+      label: "Andhra Pradesh State Road Transport Department",
+    },
+    {
+      value: "Arunachal Pradesh",
+      label: "Arunachal Pradesh Transport Department",
+    },
+    {
+      value: "Assam",
+      label: "Assam State Transport Corporation",
+    },
+    // Add more states and their respective RTO office details as needed
+  ];
 
   const genderoptions = [
     {
@@ -190,7 +216,18 @@ function LearnerLicense() {
     // Add more countries as needed
   ];
 
+  const formik = useFormik({
+    initialValues: listData,
+    enableReinitialize: true,
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      handleSubmit(values);
+    },
+  });
+
   const navigate = useNavigate();
+
+  const handleSubmit = (values) => {};
 
   const backToHome = () => {
     navigate("/license");
@@ -214,607 +251,618 @@ function LearnerLicense() {
       <br />
       <br />
       <br />
-      <div className="container-fluid">
-        <div className="col-sm-12">
-          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-            <h3>Application For Learner License</h3>
-          </div>
 
-          <br />
+      <Form onSubmit={formik.handleSubmit}>
+        <div className="container-fluid">
+          <div className="col-sm-12">
+            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+              <h3>Application For Learner License</h3>
 
-          <div className="col-sm-4">
-            <div className="well">
-              <div>
-                <label htmlFor="lname"> State </label> {""}
-                <Input
-                  type="select"
-                  name="state"
-                  id="state"
-                  placeholder="Select State"
-                  value={state}
-                  onChange={(e) => {
-                    setState(e.target.value);
-                  }}
-                  className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                >
-                  <option value="">Please Select State</option>
-                  {stateDropdown.map((item) => (
-                    <option value={item.value}>{item.label}</option>
-                  ))}
-                </Input>
-                {submitFlag && !state && (
-                  <div className="invalid-feedback1">{"State is required"}</div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4">
-            <div className="well">
-              <div className="commoninput">
-                <label htmlFor="lname"> RTO Office </label> {""}
-                <Input
-                  type="select"
-                  name="transaction"
-                  id="transaction"
-                  placeholder="Select Transaction"
-                  value={state}
-                  onChange={(e) => {
-                    setState(e.target.value);
-                  }}
-                  className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                >
-                  <option value="">Select</option>
-                  {stateDropdown.map((item) => (
-                    <option value={item.value}>{item.label}</option>
-                  ))}
-                </Input>
-                {submitFlag && !state && (
-                  <div className="invalid-feedback1">{"State is required"}</div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4">
-            <div className="well">
-              <div className="commoninput">
-                <label htmlFor="lname"> Pincode </label> {""}
-                <Input
-                  type="text"
-                  name="pincode"
-                  id="pincode"
-                  placeholder="Enter Pincode"
-                  value={state}
-                  onChange={(e) => {
-                    setState(e.target.value);
-                  }}
-                  className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                >
-                  <option value="">Select</option>
-                  {stateDropdown.map((item) => (
-                    <option value={item.value}>{item.label}</option>
-                  ))}
-                </Input>
-                {submitFlag && !state && (
-                  <div className="invalid-feedback1">{"State is required"}</div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-          <Button style={{ width: "100px" }}>Continue</Button>{" "}
-          <Button style={{ width: "100px" }} onClick={backToHome}>
-            {" "}
-            Back{" "}
-          </Button>
-        </div>
-      </div>
-
-      <div className="container-fluid">
-        <div className="col-sm-12">
-          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-            <h5>Personal Details</h5>
-
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Name of the Applicant </label> {""}
-                  <Input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    placeholder="Enter First Name"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <Input
-                    type="text"
-                    name="middleName"
-                    id="middleName"
-                    placeholder="Enter Middle Name"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <Input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    placeholder="Enter Last Name"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-6">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Aadhaar Number </label> {""}
-                  <Input
-                    type="text"
-                    name="aadhaarNumber"
-                    id="aadhaarNumber"
-                    placeholder="Enter Aadhaar Name"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-6">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> NPR Number </label> {""}
-                  <Input
-                    type="text"
-                    name="aadhaarNumber"
-                    id="aadhaarNumber"
-                    placeholder="Enter Aadhaar Name"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm-4">
-              <div className="well-gender">
-                <label> Gender </label> {""}
-                {genderoptions.map((items) => (
-                  <div className="gender">
+              <div className="col-sm-4">
+                <div className="well">
+                  <div>
+                    <label htmlFor="lname"> State </label> {""}
                     <Input
-                      type="radio"
-                      id={`gender${items.value}`}
-                      name="gender"
-                      value={items.value}
-                      checked={gender == items.value}
-                      onChange={handleOptionChange}
-                    />
-
-                    <label>{items.label}</label>
+                      type="select"
+                      name="state"
+                      id="state"
+                      placeholder="Select State"
+                      value={formik.values.state}
+                      onChange={formik.handleChange}
+                      className={` inputs required-input
+                              ${
+                                formik.errors.state && formik.touched.state
+                                  ? "is-invalid"
+                                  : ""
+                              }`}
+                    >
+                      <option value="">Please Select State</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {formik.errors.state && formik.touched.state && (
+                      <div className="invalid-feedback">
+                        {formik.errors.state}
+                      </div>
+                    )}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Date of Birth </label> {""}
-                  <Input
-                    type="date"
-                    name="birthDate"
-                    id="birthDate"
-                    placeholder="DD MM YY"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> RTO Office </label> {""}
+                    <Input
+                      type="select"
+                      name="rto"
+                      id="rto"
+                      placeholder="Select RTO office"
+                      value={formik.values.rto}
+                      onChange={(e) => {
+                        setRto(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {RTOOffices.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Pincode </label> {""}
+                    <Input
+                      type="text"
+                      name="pincode"
+                      id="pincode"
+                      placeholder="Enter Pincode"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Age </label> {""}
-                  <Input
-                    type="text"
-                    name="age"
-                    id="age"
-                    placeholder="Enter Age"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+            <br />
+          </div>
+
+          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+            <Button style={{ width: "100px" }}>Continue</Button>{" "}
+            <Button style={{ width: "100px" }} onClick={backToHome}>
+              {" "}
+              Back{" "}
+            </Button>
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="col-sm-12">
+            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+              <h4>Personal Details</h4>
+
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Name of the Applicant </label> {""}
+                    <Input
+                      type="text"
+                      name="firstName"
+                      id="firstName"
+                      placeholder="Enter First Name"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Place of Birth </label> {""}
-                  <Input
-                    type="text"
-                    name="placeOfBirth"
-                    id="placeOfBirth"
-                    placeholder="Enter Place of Birth"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <Input
+                      type="text"
+                      name="middleName"
+                      id="middleName"
+                      placeholder="Enter Middle Name"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {stateDropdown.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Country of Birth </label> {""}
-                  <Input
-                    type="select"
-                    name="countries"
-                    id="countries"
-                    placeholder="Enter Country of Birth"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <Input
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      placeholder="Enter Last Name"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {countries.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Qualification</label> {""}
-                  <Input
-                    type="select"
-                    name="qualification"
-                    id="qualification"
-                    placeholder="Enter Qualification"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-6">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Aadhaar Number </label> {""}
+                    <Input
+                      type="text"
+                      name="aadhaarNumber"
+                      id="aadhaarNumber"
+                      placeholder="Enter Aadhaar Name"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select</option>
-                    {countries.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well-bloodgroup">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Blood Group</label> {""}
-                  <Input
-                    type="select"
-                    name="bloodgrp"
-                    id="bloodgrp"
-                    placeholder="Select Blood Group"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-6">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> NPR Number </label> {""}
+                    <Input
+                      type="text"
+                      name="aadhaarNumber"
+                      id="aadhaarNumber"
+                      placeholder="Enter Aadhaar Name"
+                      value={formik.values.state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select Blood Group</option>
-                    {bloodGroups.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Phone Number</label> {""}
-                  <Input
-                    type="text"
-                    name="phoNenumber"
-                    id="phoneNumber"
-                    placeholder="Enter Phone Number"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select Blood Group</option>
-                    {bloodGroups.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
+              <div className="col-sm-4">
+                <div className="well-gender">
+                  <label> Gender </label> {""}
+                  {genderoptions.map((items) => (
+                    <div className="gender">
+                      <Input
+                        type="radio"
+                        id={`gender${items.value}`}
+                        name="gender"
+                        value={items.value}
+                        checked={gender == items.value}
+                        onChange={handleOptionChange}
+                      />
+
+                      <label>{items.label}</label>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname">Email Address</label> {""}
-                  <Input
-                    type="text"
-                    name="emailAddress"
-                    id="emailAddress"
-                    placeholder="Enter Email"
-                    value={state}
-                    onChange={(e) => {
-                      setState(e.target.value);
-                    }}
-                    className={`inputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Date of Birth </label> {""}
+                    <Input
+                      type="date"
+                      name="birthDate"
+                      id="birthDate"
+                      placeholder="DD MM YY"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">Select Blood Group</option>
-                    {bloodGroups.map((item) => (
-                      <option value={item.value}>{item.label}</option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-6">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Mobile Number</label> {""}
-                  <Input
-                    type="select"
-                    name="number"
-                    id="number"
-                    placeholder="Enter Number"
-                    value={selectedCountry}
-                    onChange={handleCountryChange}
-                    className={`phonecodeinputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Age </label> {""}
+                    <Input
+                      type="text"
+                      name="age"
+                      id="age"
+                      placeholder="Enter Age"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">+91</option>
-                    {phoneCodes.map((item, index) => (
-                      <option key={index} value={item.value}>
-                        {item.label}
-                      </option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                  <Input
-                    type="tel"
-                    value={mobileNumber}
-                    onChange={handleMobileNumberChange}
-                    placeholder="Enter Mobile number"
-                    style={{ marginLeft: "10px" }}
-                  />
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-6">
-              <div className="well">
-                <div className="commoninput">
-                  <label htmlFor="lname"> Emergency Number</label> {""}
-                  <Input
-                    type="select"
-                    name="number"
-                    id="number"
-                    placeholder="Enter Number"
-                    value={selectedCountry}
-                    onChange={handleCountryChange}
-                    className={`phonecodeinputs
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Place of Birth </label> {""}
+                    <Input
+                      type="text"
+                      name="placeOfBirth"
+                      id="placeOfBirth"
+                      placeholder="Enter Place of Birth"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
                         ${submitFlag && !state ? "is-invalid1" : ""}`}
-                  >
-                    <option value="">+91</option>
-                    {phoneCodes.map((item, index) => (
-                      <option key={index} value={item.value}>
-                        {item.label}
-                      </option>
-                    ))}
-                  </Input>
-                  {submitFlag && !state && (
-                    <div className="invalid-feedback1">
-                      {"State is required"}
-                    </div>
-                  )}
-                  <Input
-                    type="tel"
-                    value={mobileNumber}
-                    onChange={handleMobileNumberChange}
-                    placeholder="Enter Mobile number"
-                    style={{ marginLeft: "10px" }}
-                  />
+                    >
+                      <option value="">Select</option>
+                      {stateDropdown.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-sm-6">
-              <div className="commoninput">
-                <Button style={{ width: "100px" }}>Submit</Button>{" "}
-                <Button style={{ width: "100px" }} onClick={backToHome}>
-                  {" "}
-                  Back{" "}
-                </Button>
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Country of Birth </label> {""}
+                    <Input
+                      type="select"
+                      name="countries"
+                      id="countries"
+                      placeholder="Enter Country of Birth"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select</option>
+                      {countries.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Qualification</label> {""}
+                    <Input
+                      type="select"
+                      name="qualification"
+                      id="qualification"
+                      placeholder="Enter Qualification"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select</option>
+                      {countries.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-4">
+                <div className="well-bloodgroup">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Blood Group</label> {""}
+                    <Input
+                      type="select"
+                      name="bloodgrp"
+                      id="bloodgrp"
+                      placeholder="Select Blood Group"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select Blood Group</option>
+                      {bloodGroups.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Phone Number</label> {""}
+                    <Input
+                      type="text"
+                      name="phoNenumber"
+                      id="phoneNumber"
+                      placeholder="Enter Phone Number"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select Blood Group</option>
+                      {bloodGroups.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-4">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname">Email Address</label> {""}
+                    <Input
+                      type="text"
+                      name="emailAddress"
+                      id="emailAddress"
+                      placeholder="Enter Email"
+                      value={state}
+                      onChange={(e) => {
+                        setState(e.target.value);
+                      }}
+                      className={`inputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">Select Blood Group</option>
+                      {bloodGroups.map((item) => (
+                        <option value={item.value}>{item.label}</option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Mobile Number</label> {""}
+                    <Input
+                      type="select"
+                      name="number"
+                      id="number"
+                      placeholder="Enter Number"
+                      value={selectedCountry}
+                      onChange={handleCountryChange}
+                      className={`phonecodeinputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">+91</option>
+                      {phoneCodes.map((item, index) => (
+                        <option key={index} value={item.value}>
+                          {item.label}
+                        </option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                    <Input
+                      type="tel"
+                      value={mobileNumber}
+                      onChange={handleMobileNumberChange}
+                      placeholder="Enter Mobile number"
+                      style={{ marginLeft: "10px" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="well">
+                  <div className="commoninput">
+                    <label htmlFor="lname"> Emergency Number</label> {""}
+                    <Input
+                      type="select"
+                      name="number"
+                      id="number"
+                      placeholder="Enter Number"
+                      value={selectedCountry}
+                      onChange={handleCountryChange}
+                      className={`phonecodeinputs
+                        ${submitFlag && !state ? "is-invalid1" : ""}`}
+                    >
+                      <option value="">+91</option>
+                      {phoneCodes.map((item, index) => (
+                        <option key={index} value={item.value}>
+                          {item.label}
+                        </option>
+                      ))}
+                    </Input>
+                    {submitFlag && !state && (
+                      <div className="invalid-feedback1">
+                        {"State is required"}
+                      </div>
+                    )}
+                    <Input
+                      type="tel"
+                      value={mobileNumber}
+                      onChange={handleMobileNumberChange}
+                      placeholder="Enter Mobile number"
+                      style={{ marginLeft: "10px" }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="commoninput">
+                  <Button style={{ width: "100px" }}>Submit</Button>{" "}
+                  <Button style={{ width: "100px" }} onClick={backToHome}>
+                    {" "}
+                    Back{" "}
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Form>
     </div>
   );
 }
