@@ -116,7 +116,7 @@ hr {
 
 /* Set a style for all buttons */
 button {
-  background-color: #04aa6d;
+  background-color: #1c7eb9;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -176,7 +176,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #fff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -188,25 +188,35 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 32px 28px;
   text-decoration: none;
+  font-size: large;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #20b6f5;
 }
 
 .active {
-  background-color: #04aa6d;
+  background-color: #1c7eb9;
+  color: #fff;
+}
+
+.dashboard {
+  a:focus,
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 /* ********************************************************* */
 
 /* ***************************CONTACT****************************** */
 .divider {
-  border-bottom: 2px solid #04aa6d;
+  border-bottom: 2px solid #1c7eb9;
 }
 
 /* ********************************************************* */
@@ -329,3 +339,99 @@ li a:hover:not(.active) {
 }
 
 /* ***************************APPOINTMENT SCREEN  ****************************** */
+
+a:focus,
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.license-screen-css {
+  a:focus,
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.btn-group-vertical > .btn-group::after,
+.btn-toolbar::after,
+.clearfix::after,
+.container-fluid::after,
+.container::after,
+.dl-horizontal dd::after,
+.form-horizontal .form-group::after,
+.modal-footer::after,
+.modal-header::after,
+.nav::after,
+.navbar-collapse::after,
+.navbar-header::after,
+.navbar::after,
+.pager::after,
+.panel-body::after,
+.row::after {
+  clear: both;
+}
+.btn-group-vertical > .btn-group::after,
+.btn-group-vertical > .btn-group::before,
+.btn-toolbar::after,
+.btn-toolbar::before,
+.clearfix::after,
+.clearfix::before,
+.container-fluid::after,
+.container-fluid::before,
+.container::after,
+.container::before,
+.dl-horizontal dd::after,
+.dl-horizontal dd::before,
+.form-horizontal .form-group::after,
+.form-horizontal .form-group::before,
+.modal-footer::after,
+.modal-footer::before,
+.modal-header::after,
+.modal-header::before,
+.nav::after,
+.nav::before,
+.navbar-collapse::after,
+.navbar-collapse::before,
+.navbar-header::after,
+.navbar-header::before,
+.navbar::after,
+.navbar::before,
+.pager::after,
+.pager::before,
+.panel-body::after,
+.panel-body::before,
+.row::after,
+.row::before {
+  display: table;
+
+  content: " ";
+}
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+
+  -moz-box-sizing: border-box;
+
+  box-sizing: border-box;
+}
+element {
+  border: 3px solid rgb(241, 241, 241);
+}
+.row {
+  margin-right: -15px;
+
+  margin-left: -15px;
+
+  background: #88d5e985;
+}
+.h3,
+h3 {
+  font-size: 24px;
+  color: #1c7eb9;
+}
+
+h1 {
+  color: #1c7eb9;
+}

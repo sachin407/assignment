@@ -353,14 +353,6 @@ function LearnerLicense() {
 
             <br />
           </div>
-
-          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-            <Button style={{ width: "100px" }}>Continue</Button>{" "}
-            <Button style={{ width: "100px" }} onClick={backToHome}>
-              {" "}
-              Back{" "}
-            </Button>
-          </div>
         </div>
 
         <div className="container-fluid">

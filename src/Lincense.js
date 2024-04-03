@@ -148,7 +148,7 @@ function License() {
   ];
 
   return (
-    <div>
+    <div className="license-screen-css">
       <br></br>
       <br></br>
       <br></br>
@@ -195,7 +195,7 @@ function License() {
         <div className="container-fluid">
           <div className="col-sm-12">
             <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-              <h3 style={{ color: "green" }}>MOTOR VEHICLES DEPARTMENT</h3>
+              <h3 style={{ color: "#1c7eb9" }}>MOTOR VEHICLES DEPARTMENT</h3>
 
               <div className="col-sm-6">
                 <a href="create/license">

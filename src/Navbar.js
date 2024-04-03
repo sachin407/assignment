@@ -1,5 +1,6 @@
 import "./Common.css";
 import { useState, useEffect } from "react";
+import headerLogo from "./imgFiles/header-logo-modified.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -21,6 +22,10 @@ function Navbar() {
     <div>
       <ul style={{ zIndex: "1" }}>
         <li>
+          <img src={headerLogo} style={{ width: "90px" }} />
+        </li>
+
+        <li>
           <Link
             className={activeTab === "home" ? "active" : ""}
             to="/home"
@@ -29,6 +34,7 @@ function Navbar() {
             Home
           </Link>
         </li>
+
         <li>
           <Link
             className={activeTab === "news" ? "active" : ""}
@@ -38,6 +44,7 @@ function Navbar() {
             News
           </Link>
         </li>
+
         <li>
           <Link
             className={activeTab === "contact" ? "active" : ""}
@@ -47,6 +54,7 @@ function Navbar() {
             Contact
           </Link>
         </li>
+
         <li>
           <Link
             className={activeTab === "about" ? "active" : ""}

@@ -196,7 +196,7 @@ function DrivingSchool() {
       <div class="container-fluid">
         <div class="col-sm-12">
           <div class="row" style={{ border: "3px solid #f1f1f1" }}>
-            <h3 style={{ color: "green" }}>MOTOR VEHICLES DEPARTMENT</h3>
+            <h3 style={{ color: "#1c7eb9" }}>MOTOR VEHICLES DEPARTMENT</h3>
 
             <div className="col-sm-6">
               <div className="well license-well">
