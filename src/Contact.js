@@ -12,7 +12,7 @@ function ContactUs() {
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>Contact Us</h3>
 
-            <div className="col-sm-3">
+            <div className="col-sm-6">
               <div className="well">
                 <h4 className="divider">
                   <i class="bx bxs-user-voice"></i> Problem Area
@@ -26,7 +26,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="col-sm-3">
+            <div className="col-sm-6">
               <div className="well">
                 <h4 className="divider">
                   <i className="bx bxl-gmail"></i> Email-id
@@ -38,7 +38,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="col-sm-3">
+            <div className="col-sm-6">
               <div className="well">
                 <h4 className="divider">
                   {" "}
@@ -48,7 +48,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="col-sm-3">
+            <div className="col-sm-6">
               <div className="well">
                 <h4 className="divider">
                   <i class="bx bxs-time"></i> Timings

@@ -1,6 +1,7 @@
 import "./Common.css";
 import { useState, useEffect } from "react";
 import headerLogo from "./imgFiles/header-logo-modified.png";
+import { Input, Form, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -24,7 +25,6 @@ function Navbar() {
         <li>
           <img src={headerLogo} style={{ width: "90px" }} />
         </li>
-
         <li>
           <Link
             className={activeTab === "home" ? "active" : ""}
@@ -34,7 +34,6 @@ function Navbar() {
             Home
           </Link>
         </li>
-
         <li>
           <Link
             className={activeTab === "news" ? "active" : ""}
@@ -44,7 +43,6 @@ function Navbar() {
             News
           </Link>
         </li>
-
         <li>
           <Link
             className={activeTab === "contact" ? "active" : ""}
@@ -54,7 +52,6 @@ function Navbar() {
             Contact
           </Link>
         </li>
-
         <li>
           <Link
             className={activeTab === "about" ? "active" : ""}

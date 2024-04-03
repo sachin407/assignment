@@ -54,14 +54,6 @@ function Login() {
           </div>
 
           <div className="container_login">
-            {/* <button type="button" className="cancelbtn">
-            Don't have an account yet?
-          </button>
-
-          <button type="button" className="cancelbtn">
-            Don't have an account yet?
-          </button> */}
-
             <span className="psw-one">
               Don't have an account yet ?{" "}
               <a onClick={nevigateToRegistration} href="/registration">

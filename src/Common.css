@@ -435,3 +435,15 @@ h3 {
 h1 {
   color: #1c7eb9;
 }
+
+.invalid-feedback {
+  display: block !important;
+  width: 100%;
+  color: #f86c6b;
+}
+
+form {
+  .is-invalid {
+    border-color: #f86c6b;
+  }
+}
