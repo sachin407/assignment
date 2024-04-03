@@ -198,7 +198,7 @@ function License() {
               <h3 style={{ color: "#1c7eb9" }}>MOTOR VEHICLES DEPARTMENT</h3>
 
               <div className="col-sm-6">
-                <a href="create/license">
+                <a href="create/learner/license">
                   <div
                     className={`well license-well ${!state && "disabled-card"}`}
                   >
@@ -213,15 +213,19 @@ function License() {
               </div>
 
               <div class="col-sm-6">
-                <div class="well license-well">
-                  <img
-                    src={Drivinglogo}
-                    alt="Avatar"
-                    className="avatar license-img"
-                  />
+                <a href="create/license">
+                  <div
+                    className={`well license-well ${!state && "disabled-card"}`}
+                  >
+                    <img
+                      src={Drivinglogo}
+                      alt="Avatar"
+                      className="avatar license-img"
+                    />
 
-                  <h4>Apply For Driving License</h4>
-                </div>
+                    <h4>Apply For Driving License</h4>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
