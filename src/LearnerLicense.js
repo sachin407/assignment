@@ -581,48 +581,6 @@ function LearnerLicense() {
 
               <div className="col-sm-6">
                 <div className="well">
-                  <div className="commoninput">
-                    <label htmlFor="lname"> NPR Number </label> {""}
-                    <Input
-                      type="text"
-                      name="nprnumber"
-                      id="nprnumber"
-                      placeholder="Enter NPR Number"
-                      value={formik.values.nprnumber}
-                      onChange={(option) => {
-                        let regex = /^(\d+(\.\d+)?)$/;
-                        const v = option.target.value;
-                        if (v === "" || regex.test(v)) {
-                          formik.handleChange("nprnumber")(option);
-                        }
-                      }}
-                      className={`required-input
-                               ${
-                                 formik.errors.nprnumber &&
-                                 formik.touched.nprnumber
-                                   ? "is-invalid"
-                                   : ""
-                               }`}
-                    />
-                    {formik.errors.nprnumber && formik.touched.nprnumber && (
-                      <div className="invalid-feedback">
-                        {formik.errors.nprnumber}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="col-sm-12">
-            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-              <h3>{""}</h3>
-
-              <div className="col-sm-4">
-                <div className="well">
                   <div>
                     <label> Gender </label> {""}
                     <Input
@@ -652,8 +610,16 @@ function LearnerLicense() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <div className="col-sm-4">
+        <div className="container-fluid">
+          <div className="col-sm-12">
+            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+              <h3>{""}</h3>
+
+              <div className="col-sm-6">
                 <div className="well">
                   <div className="commoninput">
                     <label htmlFor="lname"> Date of Birth </label> {""}
@@ -683,7 +649,7 @@ function LearnerLicense() {
                 </div>
               </div>
 
-              <div className="col-sm-4">
+              <div className="col-sm-6">
                 <div className="well">
                   <div className="commoninput">
                     <label htmlFor="lname"> Age </label> {""}
@@ -790,39 +756,6 @@ function LearnerLicense() {
           <div className="col-sm-12">
             <div className="row" style={{ border: "3px solid #f1f1f1" }}>
               <h3>{""}</h3>
-              <div className="col-sm-6">
-                <div className="well">
-                  <div className="commoninput">
-                    <label htmlFor="lname"> Qualification</label> {""}
-                    <Input
-                      type="select"
-                      name="qualification"
-                      id="qualification"
-                      placeholder="Enter Qualification"
-                      value={formik.values.qualification}
-                      onChange={formik.handleChange}
-                      className={` inputs required-input
-                              ${
-                                formik.errors.qualification &&
-                                formik.touched.qualification
-                                  ? "is-invalid"
-                                  : ""
-                              }`}
-                    >
-                      <option value="">Select</option>
-                      {countries.map((item) => (
-                        <option value={item.value}>{item.label}</option>
-                      ))}
-                    </Input>
-                    {formik.errors.qualification &&
-                      formik.touched.qualification && (
-                        <div className="invalid-feedback">
-                          {formik.errors.qualification}
-                        </div>
-                      )}
-                  </div>
-                </div>
-              </div>
 
               <div className="col-sm-6">
                 <div className="well">
@@ -856,14 +789,6 @@ function LearnerLicense() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="col-sm-12">
-            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
-              <h3>{""}</h3>
 
               <div className="col-sm-6">
                 <div className="well">
@@ -895,6 +820,14 @@ function LearnerLicense() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="col-sm-12">
+            <div className="row" style={{ border: "3px solid #f1f1f1" }}>
+              <h3>{""}</h3>
 
               <div className="col-sm-6">
                 <div className="well">
@@ -973,59 +906,6 @@ function LearnerLicense() {
                       formik.touched.mobileNumber && (
                         <div className="invalid-feedback">
                           {formik.errors.mobileNumber}
-                        </div>
-                      )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-6">
-                <div className="well">
-                  <div className="commoninput">
-                    <label htmlFor="lname"> Emergency Number</label> {""}
-                    <Input
-                      type="select"
-                      name="number"
-                      id="number"
-                      placeholder="Enter Number"
-                      value={selectedCountry}
-                      onChange={handleCountryChange}
-                      className={`phonecodeinputs
-                        ${submitFlag && !state ? "is-invalid1" : ""}`}
-                    >
-                      <option value="">+91</option>
-                      {phoneCodes.map((item, index) => (
-                        <option key={index} value={item.value}>
-                          {item.label}
-                        </option>
-                      ))}
-                    </Input>
-                    {submitFlag && !state && (
-                      <div className="invalid-feedback1">
-                        {"State is required"}
-                      </div>
-                    )}
-                    <Input
-                      type="text"
-                      name="emergencyNumber"
-                      id="emergencyNumber"
-                      placeholder="Enter Mobile Number"
-                      value={formik.values.emergencyNumber}
-                      onChange={(option) => {
-                        formik.handleChange("emergencyNumber")(option);
-                      }}
-                      className={`required-input
-                           ${
-                             formik.errors.emergencyNumber &&
-                             formik.touched.emergencyNumber
-                               ? "is-invalid"
-                               : ""
-                           }`}
-                    />
-                    {formik.errors.emergencyNumber &&
-                      formik.touched.emergencyNumber && (
-                        <div className="invalid-feedback">
-                          {formik.errors.emergencyNumber}
                         </div>
                       )}
                   </div>
