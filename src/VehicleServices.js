@@ -1,33 +1,32 @@
-// import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "./Common.css";
 import DrivingLicense from "./imgFiles/Vehicles Services/v-new-vehicle-registration.png";
 import OnlineTestAppointemet from "./imgFiles/Vehicles Services/v-permit-services.png";
 import OtherServices from "./imgFiles/Vehicles Services/v-vehicle-registration.png";
 
 function VehicleServices() {
-  //   const navigate = useNavigate();
+  const [state, setState] = useState("");
 
-  //   const backToLogIn = () => {
-  //     navigate("/");
-  //   };
   return (
     <div>
-      <div class="container-fluid">
-        <div class="col-sm-12">
-          <div class="row" style={{ border: "3px solid #f1f1f1" }}>
+      <div className="container-fluid">
+        <div className="col-sm-12">
+          <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>Vehicles Related Services</h3>
 
-            <div class="col-sm-4">
-              <div class="well">
-                <img src={DrivingLicense} alt="Avatar" className="avatar" />
+            <div className="col-sm-4">
+              <a href="create/registration">
+                <div className={`well ${!state && "disabled-card"}`}>
+                  <img src={DrivingLicense} alt="Avatar" className="avatar" />
 
-                <h4>Vehicle Registration</h4>
-                <p>One click for all the vehicle related citizen services</p>
-              </div>
+                  <h4>Vehicle Registration</h4>
+                  <p>One click for all the vehicle related citizen services</p>
+                </div>
+              </a>
             </div>
 
-            <div class="col-sm-4">
-              <div class="well">
+            <div className="col-sm-4">
+              <div className="well">
                 <img
                   src={OnlineTestAppointemet}
                   alt="Avatar"
@@ -38,8 +37,8 @@ function VehicleServices() {
                 <p>Seamless online way for vehicle permits</p>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="well">
+            <div className="col-sm-4">
+              <div className="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />
 
                 <h4>Other Services</h4>

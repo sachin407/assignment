@@ -18,6 +18,7 @@ import DrivingSchool from "./DrivingSchool";
 import Appointment from "./Appointment";
 import LearnerLicense from "./LearnerLicense";
 import ApplyOfLicense from "./ApplyForLicense";
+import VehicleRegisterForm from "./VehicleRegisterForm";
 
 function NavbarWithLocation() {
   const location = useLocation();
@@ -46,6 +47,11 @@ function App() {
             element={<LearnerLicense />}
           />
           <Route exact path="create/license" element={<ApplyOfLicense />} />
+          <Route
+            exact
+            path="create/registration"
+            element={<VehicleRegisterForm />}
+          />
         </Routes>
       </div>
     </Router>
