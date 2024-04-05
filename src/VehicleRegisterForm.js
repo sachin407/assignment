@@ -353,72 +353,6 @@ function VehicleRegisterForm() {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="col-sm-4">
-                <div className="well">
-                  <div className="commoninput">
-                    <Input
-                      type="text"
-                      name="middleName"
-                      id="middleName"
-                      placeholder="Enter Middle Name"
-                      value={formik.values.middleName}
-                      onChange={(option) => {
-                        let regex = /^([^0-9]*)$/;
-                        const w = option.target.value;
-                        if (w === "" || regex.test(w)) {
-                          formik.handleChange("middleName")(option);
-                        }
-                      }}
-                      className={`required-input
-                              ${
-                                formik.errors.middleName &&
-                                formik.touched.middleName
-                                  ? "is-invalid"
-                                  : ""
-                              }`}
-                    />
-                    {formik.errors.middleName && formik.touched.middleName && (
-                      <div className="invalid-feedback">
-                        {formik.errors.middleName}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-4">
-                <div className="well">
-                  <div className="commoninput">
-                    <Input
-                      type="text"
-                      name="lastName"
-                      id="lastName"
-                      placeholder="Enter Last Name"
-                      value={formik.values.lastName}
-                      onChange={(option) => {
-                        let regex = /^([^0-9]*)$/;
-                        const w = option.target.value;
-                        if (w === "" || regex.test(w)) {
-                          formik.handleChange("lastName")(option);
-                        }
-                      }}
-                      className={`required-input
-                              ${
-                                formik.errors.lastName &&
-                                formik.touched.lastName
-                                  ? "is-invalid"
-                                  : ""
-                              }`}
-                    />
-                    {formik.errors.lastName && formik.touched.lastName && (
-                      <div className="invalid-feedback">
-                        {formik.errors.lastName}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
@@ -536,65 +470,6 @@ function VehicleRegisterForm() {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="col-sm-4">
-                <div className="well">
-                  <div className="commoninput">
-                    <label htmlFor="lname"> Date of Birth </label> {""}
-                    <Input
-                      type="date"
-                      name="dateOfBirth"
-                      id="dateOfBirth"
-                      placeholder="DD MM YY"
-                      value={formik.values.dateOfBirth}
-                      onChange={(option) => {
-                        formik.handleChange("dateOfBirth")(option);
-                      }}
-                      className={`required-input
-                     ${
-                       formik.errors.dateOfBirth && formik.touched.dateOfBirth
-                         ? "is-invalid"
-                         : ""
-                     }`}
-                    />
-                    {formik.errors.dateOfBirth &&
-                      formik.touched.dateOfBirth && (
-                        <div className="invalid-feedback">
-                          {formik.errors.dateOfBirth}
-                        </div>
-                      )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-4">
-                <div className="well">
-                  <div className="commoninput">
-                    <label htmlFor="lname"> Age </label> {""}
-                    <Input
-                      type="text"
-                      name="age"
-                      id="age"
-                      placeholder="Enter Age"
-                      value={formik.values.age}
-                      onChange={(option) => {
-                        formik.handleChange("age")(option);
-                      }}
-                      className={`required-input
-                           ${
-                             formik.errors.age && formik.touched.age
-                               ? "is-invalid"
-                               : ""
-                           }`}
-                    />
-                    {formik.errors.age && formik.touched.age && (
-                      <div className="invalid-feedback">
-                        {formik.errors.age}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
