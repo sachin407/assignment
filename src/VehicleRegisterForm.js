@@ -24,22 +24,17 @@ const validationSchema = yup.object({
   aadhaarNumber: yup
     .string("Enter your Aadhaar Number")
     .required("Aadhar Number is required"),
-
   nprnumber: yup
     .string("Enter your NPR Number")
     .required("NPR number is required"),
-
   gender: yup.string("Enter your gender").required("Gender is required"),
   dateOfBirth: yup
     .string("Enter your dateOfBirth")
     .required("Date of Birth is required"),
-
   age: yup.string("Enter your Age").required("Age is required"),
-
   placeOfBirth: yup
     .string("Enter your placeOfBirth")
     .required("Place of Birth is required"),
-
   countries: yup
     .string("Enter your countryOfBirth")
     .required("Country of Birth is required"),
