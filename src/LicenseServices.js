@@ -2,7 +2,6 @@
 import "./Common.css";
 import DrivingLicense from "./imgFiles/License Services/v-learners-license-services.png";
 import DrivingSchool from "./imgFiles/License Services/v-driving-school-license.png";
-import OnlineTestAppointemet from "./imgFiles/License Services/v-online-test-appointment.png";
 import OtherServices from "./imgFiles/License Services/v-driving-license.png";
 
 function LicenseServices() {

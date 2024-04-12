@@ -14,7 +14,7 @@ function VehicleServices() {
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3>Vehicles Related Services</h3>
 
-            <div className="col-sm-4">
+            <div className="col-sm-6">
               <a href="create/registration">
                 <div className={`well ${!state && "disabled-card"}`}>
                   <img src={DrivingLicense} alt="Avatar" className="avatar" />
@@ -25,19 +25,7 @@ function VehicleServices() {
               </a>
             </div>
 
-            <div className="col-sm-4">
-              <div className="well">
-                <img
-                  src={OnlineTestAppointemet}
-                  alt="Avatar"
-                  className="avatar"
-                />
-
-                <h4>National Permit</h4>
-                <p>Seamless online way for vehicle permits</p>
-              </div>
-            </div>
-            <div className="col-sm-4">
+            <div className="col-sm-6">
               <div className="well">
                 <img src={OtherServices} alt="Avatar" className="avatar" />
 

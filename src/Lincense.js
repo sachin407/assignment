@@ -149,10 +149,10 @@ function License() {
 
   return (
     <div className="license-screen-css">
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>

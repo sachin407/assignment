@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/license" element={<License />} />
           <Route exact path="/driving/school" element={<DrivingSchool />} />
-          <Route exact path="/appointment" element={<Appointment />} />
+          <Route exact path="/license/test" element={<Appointment />} />
           <Route
             exact
             path="create/learner/license"

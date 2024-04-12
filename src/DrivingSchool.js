@@ -146,13 +146,13 @@ function DrivingSchool() {
       value: "Puducherry",
     },
   ];
-  return (
-    <div>
-      <br />
-      <br />
-      <br />
-      <br />
 
+  return (
+    <div className="license-screen-css">
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="container-fluid">
         <div className="col-sm-12">
           <div className="row" style={{ border: "3px solid #f1f1f1" }}>
@@ -198,38 +198,17 @@ function DrivingSchool() {
           <div class="row" style={{ border: "3px solid #f1f1f1" }}>
             <h3 style={{ color: "#1c7eb9" }}>MOTOR VEHICLES DEPARTMENT</h3>
 
-            <div className="col-sm-6">
-              <div className="well license-well">
-                <img
-                  src={LicenseLogo}
-                  alt="Avatar"
-                  className="avatar license-img"
-                />
-                <h4>Apply for Learner Licence</h4>
-              </div>
-            </div>
-
             <div class="col-sm-6">
-              <div class="well license-well">
-                <img
-                  src={Drivinglogo}
-                  alt="Avatar"
-                  className="avatar license-img"
-                />
-
-                <h4>Apply For Driving License</h4>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="well license-well">
-                <img
-                  src={Renewallogo}
-                  alt="Avatar"
-                  className="avatar license-img"
-                />
-
-                <h4>Apply for Change Address</h4>
-              </div>
+              <a href="/license/test">
+                <div class="well license-well">
+                  <img
+                    src={Renewallogo}
+                    alt="Avatar"
+                    className="avatar license-img"
+                  />
+                  <h4>Test for Driving Licence</h4>
+                </div>
+              </a>
             </div>
 
             <div class="col-sm-6">
